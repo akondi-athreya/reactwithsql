@@ -1,0 +1,259 @@
+/* App.css - External CSS for User Management App */
+
+/* Base Styles and Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --primary-color: #4361ee;
+    --primary-hover: #3a56d4;
+    --secondary-color: #3f37c9;
+    --danger-color: #ef476f;
+    --danger-hover: #d23d60;
+    --success-color: #06d6a0;
+    --text-color: #2b2d42;
+    --light-text: #8d99ae;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #e9ecef;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+    --spacing: 16px;
+    --transition: all 0.3s ease;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* Layout */
+  .app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .app-header {
+    padding: var(--spacing) 0;
+    margin-bottom: var(--spacing);
+    text-align: center;
+  }
+  
+  .app-header h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+  }
+  
+  .app-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .app-footer {
+    margin-top: 40px;
+    padding: var(--spacing) 0;
+    text-align: center;
+    color: var(--light-text);
+    font-size: 1.1rem;
+  }
+  
+  /* Card Styles */
+  .card {
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styles */
+  .form-section {
+    margin-bottom: 20px;
+  }
+  
+  .form-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .input-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+  }
+  
+  input[type="text"]::placeholder {
+    color: var(--light-text);
+  }
+  
+  .btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+  }
+  
+  .btn:focus {
+    outline: none;
+  }
+  
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .btn.primary:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+  }
+  
+  .btn.secondary {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+  .btn.secondary:hover:not(:disabled) {
+    opacity: 0.9;
+  }
+  
+  .btn.danger {
+    background-color: var(--danger-color);
+    color: white;
+  }
+  
+  .btn.danger:hover:not(:disabled) {
+    background-color: var(--danger-hover);
+  }
+  
+  /* User List Section */
+  .user-list-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .user-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .user-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+  }
+  
+  .user-item:last-child {
+    border-bottom: none;
+  }
+  
+  .user-item:hover {
+    background-color: rgba(67, 97, 238, 0.05);
+  }
+  
+  .user-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .user-name {
+    font-weight: 500;
+  }
+  
+  .empty-state {
+    padding: 30px;
+    text-align: center;
+    color: var(--light-text);
+    font-style: italic;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 600px) {
+    .input-group {
+      flex-direction: column;
+    }
+    
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .button-group {
+      width: 100%;
+    }
+    
+    .btn {
+      flex: 1;
+      text-align: center;
+    }
+  }
