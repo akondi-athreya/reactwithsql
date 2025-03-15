@@ -145,7 +145,9 @@ function App() {
               <p>No users available. Add a user or refresh the list.</p>
             </div>
           )}
+
         </section>
+          <h1>Ram the Developer</h1>
       </main>
 
       <footer className="app-footer">
